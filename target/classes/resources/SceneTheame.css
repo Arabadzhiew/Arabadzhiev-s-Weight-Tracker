@@ -1,0 +1,55 @@
+.root{
+	-fx-background-color: linear-gradient(#444444,#111111);
+}
+.button{
+	-fx-border-color: #DAA520;
+	-fx-border-radius: 15;
+	-fx-background-radius: 15;
+	-fx-font: 12px "Lucida Sans Unicode";
+	-fx-background-color: radial-gradient(focus-distance 0% , center 50% 50% , radius 55% , #FFFFFF, #555555);
+}
+.button:hover{
+	-fx-border-color: #6fd600;
+	-fx-background-color: #6fd600;
+}
+.red-button:hover{
+	-fx-border-color: #FF3D3D;
+	-fx-background-color: #FF3D3D;
+}
+.text-field{
+	-fx-max-width: 150px;
+	-fx-font: 12px "Lucida Sans Unicode";
+}
+.combo-box{
+	-fx-font: 12px "Lucida Sans Unicode";
+	-fx-background-radius: 12;
+}
+#info-label{
+	-fx-font: 13px "Unispace-Bold";
+	-fx-text-fill: #DAA520;
+	-fx-text-alignment: center;
+}
+#error-label{
+	-fx-font: 12px "Lucida Sans Unicode";
+	-fx-text-fill: #FF4500;
+}
+#date-label{
+	-fx-font: 11px "Unispace-Bold";
+	-fx-text-fill: #000000;
+}
+#weight-label{
+	-fx-font: 13px "Unispace-Bold";
+	-fx-text-fill: #090979;
+}
+#message-label{
+	-fx-font: 12px "Lucida Sans Unicode";
+	-fx-text-fill: #C0C0C0;
+	-fx-text-alignment: left;
+}
+.table-view .table-column{
+	-fx-font: 12px "Lucida Sans Unicode";
+	-fx-alignment: center;
+}
+.table-view .column-header .label{
+	-fx-font: 12px "Unispace-Bold";
+}

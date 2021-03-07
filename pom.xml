@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.petar.pal</groupId>
+  <artifactId>AverageWeightTracker</artifactId>
+  <version>1.0</version>
+  <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11.0.2</version>
+        </dependency>
+    </dependencies>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>15</release>
+        </configuration>
+      </plugin>
+      <plugin>
+      	<groupId>org.openjfx</groupId>
+      	<artifactId>javafx-maven-plugin</artifactId>
+       	<version>0.0.4</version>
+      	<configuration>
+       		<mainClass>com.petar.pal.MainWindow</mainClass>
+       		<launcher>Arabadzhiev's Weight Tracker LAUNCHER</launcher>
+       		<jlinkImageName>AWT_image</jlinkImageName>
+       		<noManPages>true</noManPages>
+       		<noHeaderFiles>true</noHeaderFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
