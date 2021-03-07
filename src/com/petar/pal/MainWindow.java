@@ -114,6 +114,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 	String tableRowMargins = "Weekly";
 	
 	DecimalFormat infoDf =  new DecimalFormat("###.#");
+	DecimalFormat tableDf = new DecimalFormat("###.##");
 	DecimalFormat graphDf = new DecimalFormat("###.0");
 	DecimalFormatSymbols decimalSymbol = new DecimalFormatSymbols(Locale.getDefault());
 	
@@ -163,6 +164,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			decimalSymbol.setDecimalSeparator('.');
 			infoDf.setDecimalFormatSymbols(decimalSymbol);
 			graphDf.setDecimalFormatSymbols(decimalSymbol);
+			tableDf.setDecimalFormatSymbols(decimalSymbol);
 			
 			graphPane = new Group();
 			entryPane = new GridPane();
@@ -804,7 +806,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			}
 			average = entrySum/averageFactor;
 			if(averageFactor!=0) {
-				averageTableRows.add(new AverageTableRow(loopDate,infoDf.format(average),startDate));
+				averageTableRows.add(new AverageTableRow(loopDate,tableDf.format(average),startDate));
 			}
 			loopDate = new GregorianCalendar(loopDate.get(Calendar.YEAR),loopDate.get(Calendar.MONTH),
 					loopDate.get(Calendar.DAY_OF_MONTH)-1);

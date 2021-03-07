@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.petar.pal</groupId>
   <artifactId>AverageWeightTracker</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
