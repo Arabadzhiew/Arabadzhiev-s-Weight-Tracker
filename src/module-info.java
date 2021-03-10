@@ -1,7 +1,7 @@
-module com.petar.pal {
+module MeineFitnessPal {
 	requires javafx.controls;
 	requires transitive javafx.graphics;
-	
+
 	exports com.petar.pal;
-	
 }
+

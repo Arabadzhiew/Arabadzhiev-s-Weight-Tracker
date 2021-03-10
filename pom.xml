@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.petar.pal</groupId>
   <artifactId>AverageWeightTracker</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -35,7 +35,7 @@
       	<configuration>
        		<mainClass>com.petar.pal.MainWindow</mainClass>
        		<launcher>Arabadzhiev's Weight Tracker LAUNCHER</launcher>
-       		<jlinkImageName>AWT_image</jlinkImageName>
+       		<jlinkImageName>AWT_Image</jlinkImageName>
        		<noManPages>true</noManPages>
        		<noHeaderFiles>true</noHeaderFiles>
         </configuration>

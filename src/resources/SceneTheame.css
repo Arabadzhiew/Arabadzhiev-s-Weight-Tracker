@@ -25,7 +25,7 @@
 	-fx-background-radius: 12;
 }
 #info-label{
-	-fx-font: 13px "Unispace-Bold";
+	-fx-font: 15px "Arial Black";
 	-fx-text-fill: #DAA520;
 	-fx-text-alignment: center;
 }
@@ -34,11 +34,11 @@
 	-fx-text-fill: #FF4500;
 }
 #date-label{
-	-fx-font: 11px "Unispace-Bold";
+	-fx-font: 11px "Arial Black";
 	-fx-text-fill: #000000;
 }
 #weight-label{
-	-fx-font: 13px "Unispace-Bold";
+	-fx-font: 15px "Arial Black";
 	-fx-text-fill: #090979;
 }
 #message-label{
@@ -51,5 +51,5 @@
 	-fx-alignment: center;
 }
 .table-view .column-header .label{
-	-fx-font: 12px "Unispace-Bold";
+	-fx-font: 13px "Arial Black";
 }

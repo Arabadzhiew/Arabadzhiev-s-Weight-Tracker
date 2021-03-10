@@ -118,7 +118,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 	DecimalFormat graphDf = new DecimalFormat("###.0");
 	DecimalFormatSymbols decimalSymbol = new DecimalFormatSymbols(Locale.getDefault());
 	
-	Font graphFont = new Font("Unispace-Bold",9);
+	Font graphFont = new Font("Arial Black",9);
 	
 	Calendar currentDate = Calendar.getInstance();
 	Calendar firstEntryDate;
@@ -145,7 +145,10 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			}
 			mainPane.add(topHalfMainPane, 0, 0);
 			mainPane.add(bottomHalfMainPane, 0, 1);
-			Scene scene = new Scene(mainPane,1000,800);
+			Scene scene = new Scene(mainPane,screenBounds.getHeight(),screenBounds.getHeight()*0.8);
+			if(scene.getWidth()<880) {
+				window.setMaximized(true);
+			}
 			scene.getStylesheets().add(getClass().getResource("/resources/SceneTheame.css").toExternalForm());
 			for(int i = 0; i < 3; i++) {
 				setGridColumnConstraints(topHalfMainPane,100.0/3,HPos.CENTER);
@@ -178,7 +181,11 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			averageTablePane = new GridPane();
 			
 			
-			graph = new Rectangle(0,0,((scene.getHeight()/2)-100),((scene.getHeight()/2)-100));
+			if(scene.getWidth()<880) {
+				graph = new Rectangle(0,0,screenBounds.getHeight()/2.75,screenBounds.getHeight()/2.75);
+			}else {
+				graph = new Rectangle(0,0,scene.getHeight()/2.75,scene.getHeight()/2.75);
+			}
 			graph.setFill(Color.GHOSTWHITE);
 			firstDateText = new Text(-1, graph.getHeight()+20,"");
 			firstDateText.setFont(graphFont);
@@ -252,8 +259,11 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			setGridRowConstraints(weightButtonPane, 100.0, VPos.CENTER);
 			
 			setGridColumnConstraints(infoPane, 100.0, HPos.CENTER);
-			for(int i = 0; i <10; i++) {
+			for(int i = 0; i <9; i++) {
 				setGridRowConstraints(infoPane, 100.0/10, VPos.CENTER);
+				if(i == 2) {
+					setGridRowConstraints(infoPane, 100.0/5, VPos.TOP);
+				}
 			}
 			
 			for(int i = 0; i < 3; i++) {
@@ -329,7 +339,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			storage.mkdir();
 			
 			try {
-				if(readEntries()!=null) {
+				if(readEntries().size()>0) {
 					weightEntries = readEntries();
 					updateGraph();
 					clearEntryScrollPane();
@@ -354,11 +364,12 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			}
 			
 			window.setTitle("Arabadzhiev's Weight Tracker");
-			window.setResizable(false);
 			window.getIcons().add(new Image(MainWindow.class.getResourceAsStream("/resources/fitnessIcon.png")));
 			window.setScene(scene);
 			window.show();
 			setWindowCentered(screenBounds, window);
+			window.setMinWidth(window.getWidth());
+			window.setMinHeight(window.getHeight());
 			stageBounds = new Rectangle2D(window.getX(),window.getY(),window.getWidth(),window.getHeight());
 			window.xProperty().addListener(new ChangeListener<Number>() {
 
