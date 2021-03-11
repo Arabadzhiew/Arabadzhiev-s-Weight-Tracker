@@ -1,7 +1,7 @@
 # Arabadzhiev's Weight tracker - Track your weight like never before!
 
 
-## To run this application, download the .exe installer inside of this repository, then run it and configure to your liking. when you are done, shortcuts will be created on your desktop and start menu, use them to access the application.
+## To run this application, download the .exe installer inside of this repository, then run it and configure to your liking. When you are done, shortcuts will be created on your desktop and start menu, use them to access the application.
 
 ![Arabadzhiev's Weight Tracker](Showcase.PNG)
 
