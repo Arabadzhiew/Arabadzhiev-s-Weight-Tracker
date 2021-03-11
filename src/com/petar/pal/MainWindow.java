@@ -118,7 +118,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 	DecimalFormat graphDf = new DecimalFormat("###.0");
 	DecimalFormatSymbols decimalSymbol = new DecimalFormatSymbols(Locale.getDefault());
 	
-	Font graphFont = new Font("Arial Black",9);
+	Font graphFont;
 	
 	Calendar currentDate = Calendar.getInstance();
 	Calendar firstEntryDate;
@@ -188,6 +188,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			}
 			graph.setFill(Color.GHOSTWHITE);
 			firstDateText = new Text(-1, graph.getHeight()+20,"");
+			graphFont = Font.loadFont(getClass().getResourceAsStream("/resources/fonts/EASPORTS15.ttf"), 12);
 			firstDateText.setFont(graphFont);
 			firstDateText.setFill(Color.SILVER);
 			lastDateText = new Text(graph.getWidth(),graph.getHeight()+20,"");
@@ -622,6 +623,11 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 		graphCeil = highestInGraph;
 		graphBot = lowestInGraph;
 		double marginDeterminer = graphCeil-graphBot;
+		if(graphDays>120&&graphDays<200&&marginDeterminer<5) {
+			marginDeterminer=5;
+		}else if(graphDays>=200&&marginDeterminer<20) {
+			marginDeterminer=20;
+		}
 		if(marginDeterminer>0 && marginDeterminer<=1) {
 			graphCeil += 0.1;
 			graphBot -= 0.1;
