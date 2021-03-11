@@ -3,7 +3,7 @@
 
 ## To run this application, download the .exe installer inside this repository, then run it and configure to your liking. After you are done with this, shortcuts will be created on your desktop and start menu, use them to access the application.
 
-![Arabadzhiev's Weight Tracker](Showcase.png)
+![Arabadzhiev's Weight Tracker](Showcase.PNG)
 
 ## This application was built using:
 * Eclipse IDE Version: 2020-12 (4.18.0);
