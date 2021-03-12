@@ -75,7 +75,7 @@ public class ConfirmationBox {
 			@Override
 			public void run() {
 				double x = mainWindowBounds.getMinX()+(mainWindowBounds.getWidth()-window.getWidth())/2;
-				double y = mainWindowBounds.getMinY()+(mainWindowBounds.getWidth()-window.getWidth())/2;
+				double y = mainWindowBounds.getMinY()+(mainWindowBounds.getHeight()-window.getHeight())/2;
 				
 				if(x+window.getWidth()>screenBounds.getMaxX()) {
 					x = x - (x+window.getWidth()-screenBounds.getMaxX());

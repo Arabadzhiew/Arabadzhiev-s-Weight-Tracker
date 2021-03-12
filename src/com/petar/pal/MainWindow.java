@@ -371,17 +371,31 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			setWindowCentered(screenBounds, window);
 			window.setMinWidth(window.getWidth());
 			window.setMinHeight(window.getHeight());
+			
 			stageBounds = new Rectangle2D(window.getX(),window.getY(),window.getWidth(),window.getHeight());
-			window.xProperty().addListener(new ChangeListener<Number>() {
+			window.widthProperty().addListener((property, oldValue, newValue) -> 
+			
+				stageBounds = new Rectangle2D(stageBounds.getMinX(),stageBounds.getMinY(),(double)newValue,stageBounds.getHeight())
+			);
+			
+			window.heightProperty().addListener((property, oldValue, newValue) -> 
+			
+				stageBounds = new Rectangle2D(stageBounds.getMinX(),stageBounds.getMinY(),stageBounds.getWidth(),(double)newValue)
+			);
+			
+			window.xProperty().addListener((property, olvValue, newValue) -> 
+			
+				stageBounds = new Rectangle2D((double)newValue,stageBounds.getMinY(),stageBounds.getWidth(),stageBounds.getHeight())
+			);
+			
+			window.yProperty().addListener(new ChangeListener<Number>() {
 
 				@Override
 				public void changed(ObservableValue<? extends Number> property, Number oldValue, Number newValue) {
-					stageBounds = new Rectangle2D((double)newValue,stageBounds.getMinY(),stageBounds.getWidth(),stageBounds.getHeight());
+					stageBounds = new Rectangle2D(stageBounds.getMinX(), (double) newValue,stageBounds.getWidth(),stageBounds.getHeight());
 				}
 				
-			});
-			window.yProperty().addListener((property, olvValue, newValue) -> stageBounds = new Rectangle2D(stageBounds.getMinX(),
-					(double) newValue,stageBounds.getWidth(),stageBounds.getHeight()));
+			});//This is a anonymous inner class instead of lambda for illustration purposes.
 			
 			switch(graphPeriod) {
 			case "1 Week":
