@@ -1,4 +1,4 @@
-module MeineFitnessPal {
+module MeineFitnessPal{
 	requires javafx.controls;
 	requires transitive javafx.graphics;
 

@@ -389,7 +389,7 @@ public class MainWindow extends Application implements EventHandler<ActionEvent>
 			);
 			
 			window.yProperty().addListener(new ChangeListener<Number>() {
-
+				
 				@Override
 				public void changed(ObservableValue<? extends Number> property, Number oldValue, Number newValue) {
 					stageBounds = new Rectangle2D(stageBounds.getMinX(), (double) newValue,stageBounds.getWidth(),stageBounds.getHeight());
